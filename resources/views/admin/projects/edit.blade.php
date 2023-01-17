@@ -27,6 +27,20 @@
                             @endforeach
                         </select>
                     </div>
+                    {{-- Tecnologia --}}
+
+                    <div class="form-group mb-3">
+                        <h4>Tecnologie</h4>
+                        @foreach ($technologies as $technology)
+                            <div class="form-check">
+                                <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id }}"
+                                    class="form-check-input" value="{{ $technology->id }}">
+                                <label for="technology-{{ $technology->id }}"
+                                    class="form-check-label">{{ $technology->name }}</label>
+                            </div>
+                        @endforeach
+
+                    </div>
 
                     {{-- Cover --}}
                     <div class="form-group mb-3">

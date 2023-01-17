@@ -11,6 +11,14 @@
             <p>{{ $project->slug }}</p>
         </div>
 
+        <div class="technologies">
+            @forelse ($project->technologies as $technology)
+                <span>#{{ $technology->name }}</span>
+            @empty
+                <span>Nessuna tecnologia</span>
+            @endforelse
+        </div>
+
         <div class="text-center">
             @if ($project->cover_image)
                 <img src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ 'Cover image di ' . $project->title }}">
